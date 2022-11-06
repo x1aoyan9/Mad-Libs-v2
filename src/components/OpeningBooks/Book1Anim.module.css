@@ -5,16 +5,6 @@
     background:black;
 }
 
-h1 {
-    text-align:center;
-    margin-top:20px;
-    margin-bottom:-70px;
-}
-
-#col {
-    display: inline-flex;
-}
-
 .container {
     background: grey;
     margin:5px;
