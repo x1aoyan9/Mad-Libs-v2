@@ -3,16 +3,86 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const JudgeForm = () => {
+const JudgeForm = (props) => {
 
+    const { judgeList, setJudgeList } = props;
 
+    const [yourName, setYourName] = useState("");
+    const [noun, setNoun] = useState("");
+    const [noun2, setNoun2] = useState("");
+    const [bodyPart, setBodyPart] = useState("");
+    const [noun3, setNoun3] = useState("");
+    const [adverb, setAdverb] = useState("");
+    const [fName, setFname] = useState("");
+    const [adjective, setAdjective] = useState("");
+    const [pluralNoun, setPluralNoun] = useState("");
+    const [name, setName] = useState("");
+    const [animal, setAnimal] = useState("");
+    const [pluralNoun2, setPluralNoun2] = useState("");
+    const [location, setLocation] = useState("");
+    const [name2, setName2] = useState("");
+    const [adjective2, setAdjective2] = useState("");
+    const [noun4, setNoun4] = useState("");
+    const [noun5, setNoun5] = useState("");
+    const [noun6, setNoun6] = useState("");
+    const [adjective3, setAdjective3] = useState("");
 
+    const navigate = useNavigate();
 
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
 
+        axios.post('http://localhost:8000/api/judge', {
+            yourName,
+            noun,
+            noun2,
+            bodyPart,
+            noun3,
+            adverb,
+            fName,
+            adjective,
+            pluralNoun,
+            name,
+            animal,
+            pluralNoun2,
+            location,
+            name2,
+            adjective2,
+            noun4,
+            noun5,
+            noun6,
+            adjective3,
+        })
+        .then((res) => {
+            console.log(res);
+            console.log(res.data);
+            navigate(`/`);
 
-
-
-
+            setJudgeList([...judgeList, res.data]);
+            setYourName("");
+            setNoun("");
+            setNoun2("");
+            setBodyPart("");
+            setNoun3("");
+            setAdverb("");
+            setFname("");
+            setAdjective("");
+            setPluralNoun("");
+            setName("");
+            setAnimal("");
+            setPluralNoun2("");
+            setLocation("");
+            setName2("");
+            setAdjective2("");
+            setNoun4("");
+            setNoun5("");
+            setNoun6("");
+            setAdjective3("");
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    };
 
     return (
         <>
@@ -27,7 +97,7 @@ const JudgeForm = () => {
                     <div className="md:grid md:grid-cols-3 md:gap-6">
                         <div className="md:col-span-1">
                             <div className="px-4 sm:px-0">
-                                <h2 className="text-lg font-medium leading-6 text-gray-900">Story Title</h2>
+                                <h2 className="text-lg font-medium leading-6 text-gray-900">Judges' Decision</h2>
                                 <h3 className="mt-1 text-sm text-gray-600">Please fill in the blanks.</h3>
                                 <br /> <hr />
                             </div>

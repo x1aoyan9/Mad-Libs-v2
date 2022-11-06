@@ -18,9 +18,6 @@ const Landing = () => {
                 <div>
                     <ButtonRandom/>
                 </div>
-                <div>
-                    <AnimatedBooks />
-                </div>
             </body>
         </section>
     );

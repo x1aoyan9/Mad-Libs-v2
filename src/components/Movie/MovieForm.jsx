@@ -3,16 +3,77 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const MovieForm = () => {
+const MovieForm = (props) => {
 
+    const { MovieList, setMovieList } = props;
 
+    const [yourName, setYourName] = useState("");
+    const [pluralNoun, setPluralNoun] = useState("");
+    const [adjective, setAdjective] = useState("");
+    const [pluralNoun2, setPluralNoun2] = useState("");
+    const [noun, setNoun] = useState("");
+    const [adjective2, setAdjective2] = useState("");
+    const [noun2, setNoun2] = useState("");
+    const [noun3, setNoun3] = useState("");
+    const [name, setName] = useState("");
+    const [location, setLocation] = useState("");
+    const [adjective3, setAdjective3] = useState("");
+    const [name2, setName2] = useState("");
+    const [name3, setName3] = useState("");
+    const [adjective4, setAdjective4] = useState("");
+    const [pluralNoun3, setPluralNoun3] = useState("");
+    const [bodyParts, setBodyParts] = useState("");
 
+    const navigate = useNavigate();
 
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
 
+        axios.post('http://localhost:8000/api/movie', {
+            yourName,
+            pluralNoun,
+            adjective,
+            pluralNoun2,
+            noun,
+            adjective2,
+            noun2,
+            noun3,
+            name,
+            location,
+            adjective3,
+            name2,
+            name3,
+            adjective4,
+            pluralNoun3,
+            bodyParts,
+        })
+        .then((res) => {
+            console.log(res);
+            console.log(res.data);
+            navigate(`/`);
 
-
-
-
+            setMovieList([...MovieList, res.data]);
+            setYourName("");
+            setPluralNoun("");
+            setAdjective("");
+            setPluralNoun2("");
+            setNoun("");
+            setAdjective2("");
+            setNoun2("");
+            setNoun3("");
+            setName("");
+            setLocation("");
+            setAdjective3("");
+            setName2("");
+            setName3("");
+            setAdjective4("");
+            setPluralNoun3("");
+            setBodyParts("");
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    };
 
     return (
         <>
@@ -27,7 +88,7 @@ const MovieForm = () => {
                     <div className="md:grid md:grid-cols-3 md:gap-6">
                         <div className="md:col-span-1">
                             <div className="px-4 sm:px-0">
-                                <h2 className="text-lg font-medium leading-6 text-gray-900">Story Title</h2>
+                                <h2 className="text-lg font-medium leading-6 text-gray-900">Movies Should Be Fun</h2>
                                 <h3 className="mt-1 text-sm text-gray-600">Please fill in the blanks.</h3>
                                 <br /> <hr />
                             </div>

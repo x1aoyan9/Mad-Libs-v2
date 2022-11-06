@@ -68,10 +68,14 @@ const BandDisplay = () => {
                                 </div>
                             </div>
                             <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
-                                <button className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" onClick={ () => navigate(`/band/edit/${oneBandLib._id}`) }>
+                                <button 
+                                    className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" 
+                                    onClick={ () => navigate(`/band/edit/${oneBandLib._id}`) }>
                                     Edit
                                 </button>
-                                <button className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" onClick={deleteHandler}>
+                                <button 
+                                    className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" 
+                                    onClick={deleteHandler}>
                                     Delete
                                 </button>
                             </div>

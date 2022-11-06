@@ -3,16 +3,83 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const MagicForm = () => {
+const MagicForm = (props) => {
 
+    const { magicList, setMagicList } = props;
 
+    const [yourName, setYourName] = useState("");
+    const [pluralNoun, setPluralNoun] = useState("");
+    const [adjective, setAdjective] = useState("");
+    const [adjective2, setAdjective2] = useState("");
+    const [noun, setNoun] = useState("");
+    const [noun2, setNoun2] = useState("");
+    const [noun3, setNoun3] = useState("");
+    const [noun4, setNoun4] = useState("");
+    const [adjective3, setAdjective3] = useState("");
+    const [bodyPart, setBodyPart] = useState("");
+    const [pluralNoun2, setPluralNoun2] = useState("");
+    const [adjective4, setAdjective4] = useState("");
+    const [noun5, setNoun5] = useState("");
+    const [adjective5, setAdjective5] = useState("");
+    const [noun6, setNoun6] = useState("");
+    const [bodyParts, setBodyParts] = useState("");
+    const [bodyPart2, setBodyPart2] = useState("");
+    const [pluralNoun3, setPluralNoun3] = useState("");
 
+    const navigate = useNavigate();
 
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
 
+        axios.post('http://localhost:8000/api/magic', {
+            yourName,
+            pluralNoun,
+            adjective,
+            adjective2,
+            noun,
+            noun2,
+            noun3,
+            noun4,
+            adjective3,
+            bodyPart,
+            pluralNoun2,
+            adjective4,
+            noun5,
+            adjective5,
+            noun6,
+            bodyParts,
+            bodyPart2,
+            pluralNoun3,
+        })
+        .then((res) => {
+            console.log(res);
+            console.log(res.data);
+            navigate(`/`);
 
-
-
-
+            setMagicList([...magicList, res.data]);
+            setYourName("");
+            setPluralNoun("");
+            setAdjective("");
+            setAdjective2("");
+            setNoun("");
+            setNoun2("");
+            setNoun3("");
+            setNoun4("");
+            setAdjective3("");
+            setBodyPart("");
+            setPluralNoun2("");
+            setAdjective4("");
+            setNoun5("");
+            setAdjective5("");
+            setNoun6("");
+            setBodyParts("");
+            setBodyPart2("");
+            setPluralNoun3("");
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    };
 
     return (
         <>
@@ -27,7 +94,7 @@ const MagicForm = () => {
                     <div className="md:grid md:grid-cols-3 md:gap-6">
                         <div className="md:col-span-1">
                             <div className="px-4 sm:px-0">
-                                <h2 className="text-lg font-medium leading-6 text-gray-900">Story Title</h2>
+                                <h2 className="text-lg font-medium leading-6 text-gray-900">Magic, Anyone?</h2>
                                 <h3 className="mt-1 text-sm text-gray-600">Please fill in the blanks.</h3>
                                 <br /> <hr />
                             </div>

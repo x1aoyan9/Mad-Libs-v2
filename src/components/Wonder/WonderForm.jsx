@@ -3,16 +3,80 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const WonderForm = () => {
+const WonderForm = (props) => {
 
+    const { wonderList, setWonderList } = props;
 
+    const [yourName, setYourName] = useState("");
+    const [pluralNoun, setPluralNoun] = useState("");
+    const [noun, setNoun] = useState("");
+    const [adjective, setAdjective] = useState("");
+    const [bodyPart, setBodyPart] = useState("");
+    const [adjective2, setAdjective2] = useState("");
+    const [adjective3, setAdjective3] = useState("");
+    const [noun2, setNoun2] = useState("");
+    const [name, setName] = useState("");
+    const [pluralNoun2, setPluralNoun2] = useState("");
+    const [adverb, setAdverb] = useState("");
+    const [bodyPart2, setBodyPart2] = useState("");
+    const [adjective4, setAdjective4] = useState("");
+    const [noun3, setNoun3] = useState("");
+    const [pluralNoun3, setPluralNoun3] = useState("");
+    const [adjective5, setAdjective5] = useState("");
+    const [location, setLocation] = useState("");
 
+    const navigate = useNavigate();
 
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
 
+        axios.post('http://localhost:8000/api/wonder', {
+            yourName,
+            pluralNoun,
+            noun,
+            adjective,
+            bodyPart,
+            adjective2,
+            adjective3,
+            noun2,
+            name,
+            pluralNoun2,
+            adverb,
+            bodyPart2,
+            adjective4,
+            noun3,
+            pluralNoun3,
+            adjective5,
+            location,
+        })
+        .then((res) => {
+            console.log(res);
+            console.log(res.data);
+            navigate(`/`);
 
-
-
-
+            setWonderList([...wonderList, res.data]);
+            setYourName("");
+            setPluralNoun("");
+            setNoun("");
+            setAdjective("");
+            setBodyPart("");
+            setAdjective2("");
+            setAdjective3("");
+            setNoun2("");
+            setName("");
+            setPluralNoun2("");
+            setAdverb("");
+            setBodyPart2("");
+            setAdjective4("");
+            setNoun3("");
+            setPluralNoun3("");
+            setAdjective5("");
+            setLocation("");
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    };
 
     return (
         <>
@@ -27,7 +91,7 @@ const WonderForm = () => {
                     <div className="md:grid md:grid-cols-3 md:gap-6">
                         <div className="md:col-span-1">
                             <div className="px-4 sm:px-0">
-                                <h2 className="text-lg font-medium leading-6 text-gray-900">Story Title</h2>
+                                <h2 className="text-lg font-medium leading-6 text-gray-900">Vacation</h2>
                                 <h3 className="mt-1 text-sm text-gray-600">Please fill in the blanks.</h3>
                                 <br /> <hr />
                             </div>

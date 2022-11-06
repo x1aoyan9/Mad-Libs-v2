@@ -3,16 +3,89 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const VacationForm = () => {
+const VacationForm = (props) => {
 
+    const { vacationList, setVacationList } = props;
 
+    const [yourName, setYourName] = useState("");
+    const [adjective, setAdjective] = useState("");
+    const [adjective2, setAdjective2] = useState("");
+    const [noun, setNoun] = useState("");
+    const [noun2, setNoun2] = useState("");
+    const [pluralNoun, setPluralNoun] = useState("");
+    const [game, setGame] = useState("");
+    const [pluralNoun2, setPluralNoun2] = useState("");
+    const [verbEnding_ING, setVerbEnding_ING] = useState("");
+    const [verbEnding_ING2, setVerbEnding_ING2] = useState("");
+    const [pluralNoun3, setPluralNoun3] = useState("");
+    const [verbEnding_ING3, setVerbEnding_ING3] = useState("");
+    const [noun3, setNoun3] = useState("");
+    const [plant, setPlant] = useState("");
+    const [bodyPart, setBodyPart] = useState("");
+    const [location, setLocation] = useState("");
+    const [verbEnding_ING4, setVerbEnding_ING4] = useState("");
+    const [adjective3, setAdjective3] = useState("");
+    const [number, setNumber] = useState("");
+    const [pluralNoun4, setPluralNoun4] = useState("");
 
+    const navigate = useNavigate();
 
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
 
+        axios.post('http://localhost:8000/api/vacation', {
+            yourName,
+            adjective,
+            adjective2,
+            noun,
+            noun2,
+            pluralNoun,
+            game,
+            pluralNoun2,
+            verbEnding_ING,
+            verbEnding_ING2,
+            pluralNoun3,
+            verbEnding_ING3,
+            noun3,
+            plant,
+            bodyPart,
+            location,
+            verbEnding_ING4,
+            adjective3,
+            number,
+            pluralNoun4,
+        })
+        .then((res) => {
+            console.log(res);
+            console.log(res.data);
+            navigate(`/`);
 
-
-
-
+            setVacationList([...vacationList, res.data]);
+            setYourName("");
+            setAdjective("");
+            setAdjective2("");
+            setNoun("");
+            setNoun2("");
+            setPluralNoun("");
+            setGame("");
+            setPluralNoun2("");
+            setVerbEnding_ING("");
+            setVerbEnding_ING2("");
+            setPluralNoun3("");
+            setVerbEnding_ING3("");
+            setNoun3("");
+            setPlant("");
+            setBodyPart("");
+            setLocation("");
+            setVerbEnding_ING4("");
+            setAdjective3("");
+            setNumber("");
+            setPluralNoun4("");
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    };
 
     return (
         <>
@@ -27,7 +100,7 @@ const VacationForm = () => {
                     <div className="md:grid md:grid-cols-3 md:gap-6">
                         <div className="md:col-span-1">
                             <div className="px-4 sm:px-0">
-                                <h2 className="text-lg font-medium leading-6 text-gray-900">Story Title</h2>
+                                <h2 className="text-lg font-medium leading-6 text-gray-900">Vacation</h2>
                                 <h3 className="mt-1 text-sm text-gray-600">Please fill in the blanks.</h3>
                                 <br /> <hr />
                             </div>

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const GiraffeForm = () => {
+const GiraffeForm = (props) => {
 
     const { giraffeList, setGiraffeList } = props;
 
