@@ -4,12 +4,6 @@ import { Link, Outlet } from 'react-router-dom';
 const Movies = () => {
     return (
         <div className="container">
-            <Header />
-            <video id="movieVid" loop muted autoPlay>
-                <source
-                    src={movie} type="video/mp4" alt="empty movie theater"
-                />
-            </video>
 
             <nav id="movieNav">
                 <Link to="/movie/new">Create</Link>

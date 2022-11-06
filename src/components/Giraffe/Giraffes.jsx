@@ -4,12 +4,6 @@ import { Link, Outlet } from 'react-router-dom';
 const Giraffes = () => {
     return (
         <div className='container'>
-            <Header />
-            <video id="giraffeVid" loop muted autoPlay>
-                <source
-                    src={giraffe} type='video/mp4' alt='giraffe'
-                />
-            </video>
 
             <div id="giraffeNav">
                 <Link to="/giraffe/new">Create</Link>

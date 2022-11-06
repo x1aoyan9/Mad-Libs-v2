@@ -1,4 +1,7 @@
-import React from 'react'
+// UPDATE
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const GiraffeUpdate = (props) => {
 
@@ -93,7 +96,7 @@ const GiraffeUpdate = (props) => {
 
     return (
         <div className="container">
-            <hr /> <br />
+            <br />
             <div className="form">
                 <h2>Edit</h2>
                 <form onSubmit={onSubmitHandler}>

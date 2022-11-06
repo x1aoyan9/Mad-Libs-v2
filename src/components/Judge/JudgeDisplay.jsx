@@ -37,7 +37,7 @@ const JudgeDisplay = () => {
 
     return (
         <div className="container">
-            <hr /> <br />
+            <br />
             <div className="content">
                 <h2>The Judges' Decision</h2>
                 <h3>By: {oneMadLib.yourName}</h3>

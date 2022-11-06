@@ -241,7 +241,7 @@ const BandForm = (props) => {
                             <div className="px-4 sm:px-0">
                                 <h2 className="text-lg font-medium leading-6 text-gray-900">Family Rock Band</h2>
                                 <h3 className="mt-1 text-sm text-gray-600">Please fill in the blanks.</h3>
-                                <br /> <hr />
+                                <br />
                             </div>
                         </div>
                         <div className="mt-5 md:col-span-2 md:mt-0">

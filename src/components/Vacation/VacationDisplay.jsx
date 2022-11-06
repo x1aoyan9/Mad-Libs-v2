@@ -36,9 +36,7 @@ const VacationDisplay = () => {
 
     return (
         <div className="container">
-            <Header />
-            <Link to={`/vacation`} className="link-btn">Back</Link>
-            <hr /> <br />
+            <br />
             <div className="content">
                 <h2>Vacation</h2>
                 <h3>By: {oneMadLib.yourName}</h3>

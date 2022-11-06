@@ -1,6 +1,6 @@
 // UPDATE
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const WonderUpdate = (props) => {
@@ -93,7 +93,7 @@ const WonderUpdate = (props) => {
 
     return (
         <div className="container">
-            <hr /> <br />
+            <br />
             <div className="form">
                 <h2>Edit</h2>
                 <form onSubmit={onSubmitHandler}>

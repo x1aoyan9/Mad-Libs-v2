@@ -1,6 +1,6 @@
 // DISPLAY [ONE]
 import React, { useState, useEffect } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const MagicDisplay = () => {
@@ -36,7 +36,7 @@ const MagicDisplay = () => {
 
     return (
         <div className="container-fluid">
-            <hr /> <br />
+            <br />
             <div className="content">
                 <h2>Magic, Anyone?</h2>
                 <h3>By: {oneMadLib.yourName}</h3>
