@@ -1,0 +1,54 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    background:black;
+}
+
+h1 {
+    text-align:center;
+    margin-top:20px;
+    margin-bottom:-70px;
+}
+
+#col {
+    display: inline-flex;
+}
+
+.container {
+    background: grey;
+    margin:5px;
+    height: 150px;
+    left: 100px;
+    perspective: 1500px;
+    perspective-origin: 50% 50%;
+    position: relative;
+    top: 100px;
+    width: 100px;
+    text-align:center;
+}
+
+.container p {
+    text-align:center;
+    margin-top: 5px;
+    color:white;
+}
+
+.container::before {
+    transform: rotateY(-180deg);
+    transform-origin: right center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container:hover .door7 {
+    transform:rotateY(30deg);
+}
+
+.door7 {
+    background: red;
+    border: 2px solid black;
+    width:100px;
+    height:150px;
+    transform-origin: left center;
+    transition: transform 0.3s;
+}

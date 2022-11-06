@@ -1,0 +1,27 @@
+h1  {
+    margin: 0 auto;
+    animation: typing-text 3s steps(13) 1s 1 both, animated-cursor 600ms steps(13) infinite;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: 'Courier New', Courier, monospace;
+    border-right: 3px solid black;
+    width: 13ch;
+}
+
+@keyframes typing-text {
+    0% {
+        width: 0ch;
+    }
+    55% {
+        width: 13ch;
+    }
+}
+
+@keyframes animated-cursor {
+    from {
+        border-right-color: black;
+    }
+    to{ 
+        border-right-color: transparent;
+    }
+}
