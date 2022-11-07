@@ -44,10 +44,15 @@ h1 {
 }
 
 .door6 {
-    background: purple;
-    border: 2px solid black;
+    border: 1px solid black;
+    background-color: rgb(90, 193, 193);
     width:150px;
     height:200px;
     transform-origin: left center;
     transition: transform 0.3s;
+}
+
+.door6 > img {
+    width: 150px;
+    height: 198px;
 }

@@ -34,7 +34,7 @@
 }
 
 .door1 {
-    border: 2px solid rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
     width:150px;
     height:200px;
     transform-origin: left center;
@@ -44,5 +44,4 @@
 .door1 > img {
     width: 150px;
     height: 198px;
-    
 }

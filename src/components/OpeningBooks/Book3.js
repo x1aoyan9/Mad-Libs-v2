@@ -1,11 +1,14 @@
 import React from 'react';
 import styles from './Book3Anim.module.css';
+import bookCover3 from '../../assets/img/judge-bruno-emmanuelle-dtqlaz4HyHw-unsplash.jpg'
 
 const Book3 = () => {
     return (
         <div id="card">
             <div class={styles.container}>
-                <div class={styles.door3}></div>
+                <div class={styles.door3}>
+                    <img src={bookCover3} alt="lone mic in the spotlight"/>
+                </div>
                 <p>3</p>
             </div>
         </div>

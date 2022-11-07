@@ -44,12 +44,14 @@ h1 {
 }
 
 .door3 {
-    text-align:center;
-    align-items:center;
-    background: gold;
-    border: 2px solid black;
+    border: 1px solid black;
     width:150px;
     height:200px;
     transform-origin: left center;
     transition: transform 0.3s;
+}
+
+.door3 > img {
+    width: 150px;
+    height: 198px;
 }
