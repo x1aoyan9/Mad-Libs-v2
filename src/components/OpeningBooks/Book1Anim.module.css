@@ -5,15 +5,15 @@
 }
 
 .container {
-    background: grey;
+    background: rgb(0, 0, 0);
     margin:5px;
-    height: 150px;
+    height: 200px;
     left: 100px;
     perspective: 1500px;
     perspective-origin: 50% 50%;
     position: relative;
     top: 100px;
-    width: 100px;
+    width: 150px;
     text-align:center;
 }
 
@@ -35,9 +35,9 @@
 
 .door1 {
     background: rgb(255, 0, 0);
-    border: 1px solid grey;
-    width:100px;
-    height:150px;
+    border: 2px solid rgb(0, 0, 0);
+    width:150px;
+    height:200px;
     transform-origin: left center;
     transition: transform 0.3s;
 }

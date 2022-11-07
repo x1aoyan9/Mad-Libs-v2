@@ -4,8 +4,8 @@ import styles from './Book6Anim.module.css';
 const Book6 = () => {
     return (
         <div id="card">
-            <div class="container">
-                <div class="door6"></div>
+            <div class={styles.container}>
+                <div class={styles.door6}></div>
                 <p>6</p>
             </div>
         </div>

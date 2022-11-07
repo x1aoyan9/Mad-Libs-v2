@@ -4,26 +4,16 @@
     box-sizing:border-box;
 }
 
-h1 {
-    text-align:center;
-    margin-top:20px;
-    margin-bottom:-70px;
-}
-
-#col {
-    display: inline-flex;
-}
-
 .container {
-    background: grey;
+    background: rgb(0, 0, 0);
     margin:5px;
-    height: 150px;
+    height: 200px;
     left: 100px;
     perspective: 1500px;
     perspective-origin: 50% 50%;
     position: relative;
     top: 100px;
-    width: 100px;
+    width: 150px;
     text-align:center;
 }
 
@@ -46,8 +36,8 @@ h1 {
 .door2 {
     background: rgb(255,105,0);
     border: 2px solid black;
-    width:100px;
-    height:150px;
+    width:150px;
+    height:200px;
     transform-origin: left center;
     transition: transform 0.3s;
 }
