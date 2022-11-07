@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Book2Anim.module.css';
 
+
 const Book2 = () => {
     return (
         <div id="card">
