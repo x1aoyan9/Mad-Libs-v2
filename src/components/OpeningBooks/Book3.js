@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Book3Anim.module.css';
-import bookCover3 from '../../assets/img/judge-bruno-emmanuelle-dtqlaz4HyHw-unsplash.jpg'
+import bookCover3 from '../../assets/img/bookCoverThree.jpg';
 
 const Book3 = () => {
     return (
@@ -9,7 +9,7 @@ const Book3 = () => {
                 <div class={styles.door3}>
                     <img src={bookCover3} alt="lone mic in the spotlight"/>
                 </div>
-                <p>3</p>
+                <p>Judge</p>
             </div>
         </div>
     );

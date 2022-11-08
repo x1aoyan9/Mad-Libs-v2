@@ -1,22 +1,11 @@
 * {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-h1 {
-    text-align:center;
-    margin-top:20px;
-    margin-bottom:-70px;
-}
-
-#col {
-    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .container {
     background: rgb(0, 0, 0);
-    margin:5px;
     height: 200px;
     left: 100px;
     perspective: 1500px;
@@ -24,13 +13,13 @@ h1 {
     position: relative;
     top: 100px;
     width: 150px;
-    text-align:center;
+    text-align: center;
 }
 
 .container p {
-    text-align:center;
+    text-align: center;
     margin-top: 5px;
-    color:white;
+    color: black;
 }
 
 .container::before {
@@ -40,14 +29,14 @@ h1 {
 }
 
 .container:hover .door5 {
-    transform:rotateY(30deg);
+    transform: rotateY(30deg);
 }
 
 .door5 {
     border: 1px solid black;
     background-color: rgb(89, 89, 199);
-    width:150px;
-    height:200px;
+    width: 150px;
+    height: 200px;
     transform-origin: left center;
     transition: transform 0.3s;
 }
@@ -55,4 +44,8 @@ h1 {
 .door5 > img {
     width: 150px;
     height: 198px;
+}
+
+.door5 > Link {
+    text-decoration: none;
 }

@@ -1,12 +1,11 @@
 * {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .container {
     background: rgb(0, 0, 0);
-    margin:5px;
     height: 200px;
     left: 100px;
     perspective: 1500px;
@@ -14,13 +13,13 @@
     position: relative;
     top: 100px;
     width: 150px;
-    text-align:center;
+    text-align: center;
 }
 
 .container p {
-    text-align:center;
+    text-align: center;
     margin-top: 5px;
-    color:white;
+    color: black;
 }
 
 .container::before {
@@ -30,13 +29,14 @@
 }
 
 .container:hover .door2 {
-    transform:rotateY(30deg);
+    transform: rotateY(30deg);
 }
 
 .door2 {
     border: 1px solid black;
-    width:150px;
-    height:200px;
+    background-color: rgb(93, 35, 165);
+    width: 150px;
+    height: 200px;
     transform-origin: left center;
     transition: transform 0.3s;
 }
@@ -44,4 +44,8 @@
 .door2 > img {
     width: 150px;
     height: 198px;
+}
+
+.door2 > Link {
+    text-decoration: none;
 }

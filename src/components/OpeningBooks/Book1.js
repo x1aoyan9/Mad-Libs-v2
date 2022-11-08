@@ -9,6 +9,7 @@ const Book1 = () => {
                 <div className={styles.door1}>
                     <img src={bookCover1} alt="band book cover"/>
                 </div>
+                <p>Band</p>
             </div>
         </div>
     );
