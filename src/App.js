@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Bands, Giraffes, Judges, Magics, Movies, Vacations, Wonders, BandDisplay, GiraffeDisplay, JudgeDisplay, MagicDisplay, MovieDisplay, VacationDisplay, WonderDisplay, BandForm, GiraffeForm, JudgeForm, MagicForm, MovieForm, VacationForm, WonderForm, BandUpdate, GiraffeUpdate, JudgeUpdate, MagicUpdate, MovieUpdate, VacationUpdate, WonderUpdate } from './components/index';
+import { Bands, Giraffes, Judges, Magics, Movies, Vacations, Wonders, BandDisplay, GiraffeDisplay, JudgeDisplay, MagicDisplay, MovieDisplay, VacationDisplay, WonderDisplay, BandForm, GiraffeForm, JudgeForm, MagicForm, MovieForm, VacationForm, WonderForm, BandUpdate, GiraffeUpdate, JudgeUpdate, MagicUpdate, MovieUpdate, VacationUpdate, WonderUpdate, BandDisplayAll, GiraffeDisplayAll, JudgeDisplayAll, MagicDisplayAll, MovieDisplayAll, VacationDisplayAll, WonderDisplayAll } from './components/index';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import AnimatedHeader from './components/Header/AnimatedHeader';
@@ -31,42 +31,49 @@ function App() {
             <Route path="/band/new" element={<BandForm />} />
             <Route path="/band/:id" element={<BandDisplay/>} />
             <Route path="/band/edit/:id" element={<BandUpdate />} />
+            <Route path="/band" element={<BandDisplayAll/>} />
           </Route>
 
           <Route path="/giraffe" element={<Giraffes />}>
             <Route path="/giraffe/new" element={<GiraffeForm />} />
             <Route path="/giraffe/:id" element={<GiraffeDisplay/>} />
             <Route path="/giraffe/edit/:id" element={<GiraffeUpdate />} />
+            <Route path="/giraffe" element={<GiraffeDisplayAll/>} />
           </Route>
 
           <Route path="/judge" element={<Judges />}>
             <Route path="/judge/new" element={<JudgeForm />} />
             <Route path="/judge/:id" element={<JudgeDisplay/>} />
             <Route path="/judge/edit/:id" element={<JudgeUpdate />} />
+            <Route path="/judge" element={<JudgeDisplayAll/>} />
           </Route>
 
           <Route path="/magic" element={<Magics />}>
             <Route path="/magic/new" element={<MagicForm />} />
             <Route path="/magic/:id" element={<MagicDisplay/>} />
             <Route path="/magic/edit/:id" element={<MagicUpdate />} />
+            <Route path="/magic" element={<MagicDisplayAll/>} />
           </Route>
 
           <Route path="/movie" element={<Movies />}>
             <Route path="/movie/new" element={<MovieForm />} />
             <Route path="/movie/:id" element={<MovieDisplay/>} />
             <Route path="/movie/edit/:id" element={<MovieUpdate />} />
+            <Route path="/movie" element={<MovieDisplayAll/>} />
           </Route>
 
           <Route path="/vacation" element={<Vacations />}>
             <Route path="/vacation/new" element={<VacationForm />} />
             <Route path="/vacation/:id" element={<VacationDisplay/>} />
             <Route path="/vacation/edit/:id" element={<VacationUpdate />} />
+            <Route path="/vacation" element={<VacationDisplayAll/>} />
           </Route>
 
           <Route path="/wonder" element={<Wonders />}>
             <Route path="/wonder/new" element={<WonderForm />} />
             <Route path="/wonder/:id" element={<WonderDisplay/>} />
             <Route path="/wonder/edit/:id" element={<WonderUpdate />} />
+            <Route path="/wonder" element={<WonderDisplayAll/>} />
           </Route>
         </Routes>
       </BrowserRouter>

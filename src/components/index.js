@@ -30,6 +30,14 @@ import MovieUpdate from '../components/Movie/MovieUpdate';
 import VacationUpdate from '../components/Vacation/VacationUpdate';
 import WonderUpdate from '../components/Wonder/WonderUpdate';
 
+import BandDisplayAll from './Band/BandDisplayAll';
+import GiraffeDisplayAll from './Giraffe/GiraffeDisplayAll';
+import JudgeDisplayAll from './Judge/JudgeDisplayAll';
+import MagicDisplayAll from './Magic/MagicDisplayAll';
+import MovieDisplayAll from './Movie/MovieDisplayAll';
+import VacationDisplayAll from './Vacation/VacationDisplayAll';
+import WonderDisplayAll from './Wonder/WonderDisplayAll';
+
 export {
     Bands,
     Giraffes,
@@ -59,4 +67,11 @@ export {
     MovieUpdate,
     VacationUpdate,
     WonderUpdate,
+    BandDisplayAll,
+    GiraffeDisplayAll,
+    JudgeDisplayAll,
+    MagicDisplayAll,
+    MovieDisplayAll,
+    VacationDisplayAll,
+    WonderDisplayAll,
 };

@@ -31,7 +31,6 @@ const WonderUpdate = (props) => {
     useEffect(() => {
         axios.get(`http://localhost:8000/api/wonder/${id}`)
         .then((res) => {
-            console.log(res);
             console.log(res.data);
 
             setYourName(res.data.yourName);
@@ -82,7 +81,6 @@ const WonderUpdate = (props) => {
             writer,
         })
         .then((res) => {
-            console.log(res);
             console.log(res.data);
             navigate('/');
         })
@@ -92,86 +90,211 @@ const WonderUpdate = (props) => {
     };
 
     return (
-        <div className="container">
-            <br />
-            <div className="form">
-                <h2>Edit</h2>
-                <form onSubmit={onSubmitHandler}>
-                <div className="form-group">
-                        <label>Your Name: </label>
-                        <input type="text" name="yourName" value={yourName} onChange={(e) => setYourName(e.target.value)} />
+        <>
+            <div>
+                <div className="hidden sm:block" aria-hidden="true">
+                    <div className="py-5">
+                        <div className="border-t border-gray-200" />
                     </div>
-                    <div className="form-group">
-                        <label>Plural Noun: </label>
-                        <input type="text" name="pluralNoun" value={pluralNoun} onChange={(e) => setPluralNoun(e.target.value)} />
-                        {/* <input  value={randomAdj} onChange={(e) => setAdjective(e.randomAdj)}/> */}
+                </div>
+                <div className="mt-10 sm:mt-0">
+                    <div className="md:grid md:grid-cols-3 md:gap-6">
+                        <div className="md:col-span-1">
+                            <div className="px-4 sm:px-0">
+                                <h2 className="text-lg font-medium leading-6 text-gray-900">Story of the One-Hit Wonder</h2>
+                                <h3 className="mt-1 text-sm text-gray-600">Please fill in the blanks.</h3>
+                                <br />
+                            </div>
+                        </div>
+                        <div className="mt-5 md:col-span-2 md:mt-0">
+                            <form onSubmit={onSubmitHandler}>
+                                <div className="overflow-hidden shadow sm:rounded-md">
+                                    <div className="bg-white px-4 py-5 sm:p-6">
+                                        <div className="grid grid-cols-6 gap-6">
+                                            <div className="col-span-6 sm:col-span-3">
+                                                <label className="block text-sm font-medium text-gray-700">
+                                                    Your Name :
+                                                </label>
+                                                <input 
+                                                    type="text" 
+                                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" 
+                                                    name="yourName" value={yourName} onChange={(e) => setYourName(e.target.value)} />
+                                            </div>
+                                            <div className="col-span-6 sm:col-span-3">
+                                                <label className="block text-sm font-medium text-gray-700">
+                                                    Plural Noun :
+                                                </label>
+                                                <input
+                                                    type="text" 
+                                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" 
+                                                    name="pluralNoun" value={pluralNoun} onChange={(e) => setPluralNoun(e.target.value)} required 
+                                                />
+                                            </div>
+                                            <div className="col-span-6 sm:col-span-3">
+                                                <label className="block text-sm font-medium text-gray-700">
+                                                    Noun :
+                                                </label>
+                                                <input
+                                                    type="text" 
+                                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" 
+                                                    name="noun" value={noun} onChange={(e) => setNoun(e.target.value)} required 
+                                                />
+                                            </div>
+                                            <div className="col-span-6 sm:col-span-3">
+                                                <label className="block text-sm font-medium text-gray-700">
+                                                    Adjective :
+                                                </label>
+                                                <input
+                                                    type="text" 
+                                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" 
+                                                    name="adjective" value={adjective} onChange={(e) => setAdjective(e.target.value)} required 
+                                                />
+                                            </div>
+                                            <div className="col-span-6 sm:col-span-3">
+                                                <label className="block text-sm font-medium text-gray-700">
+                                                    Part of the Body :
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" 
+                                                    name="bodyPart" value={bodyPart} onChange={(e) => setBodyPart(e.target.value)} required
+                                                />
+                                            </div>
+                                            <div className="col-span-6 sm:col-span-3">
+                                                <label className="block text-sm font-medium text-gray-700">
+                                                    Adjective :
+                                                </label>
+                                                <input
+                                                    type="text" 
+                                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" 
+                                                    name="adjective2" value={adjective2} onChange={(e) => setAdjective2(e.target.value)} required 
+                                                />
+                                            </div>
+                                            <div className="col-span-6 sm:col-span-3">
+                                                <label className="block text-sm font-medium text-gray-700">
+                                                    Adjective :
+                                                </label>
+                                                <input
+                                                    type="text" 
+                                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" 
+                                                    name="adjective3" value={adjective3} onChange={(e) => setAdjective3(e.target.value)} required 
+                                                />
+                                            </div>
+                                            <div className="col-span-6 sm:col-span-3">
+                                                <label className="block text-sm font-medium text-gray-700">
+                                                    Noun :
+                                                </label>
+                                                <input
+                                                    type="text" 
+                                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" 
+                                                    name="noun2" value={noun2} onChange={(e) => setNoun2(e.target.value)} required 
+                                                />
+                                            </div>
+                                            <div className="col-span-6 sm:col-span-3">
+                                                <label className="block text-sm font-medium text-gray-700">
+                                                    Random Name :
+                                                </label>
+                                                <input
+                                                    type="text" 
+                                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" 
+                                                    name="name" value={name} onChange={(e) => setName(e.target.value)} required 
+                                                />
+                                            </div>
+                                            <div className="col-span-6 sm:col-span-3">
+                                                <label className="block text-sm font-medium text-gray-700">
+                                                    Plural Noun :
+                                                </label>
+                                                <input
+                                                    type="text" 
+                                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" 
+                                                    name="pluralNoun2" value={pluralNoun2} onChange={(e) => setPluralNoun2(e.target.value)} required 
+                                                />
+                                            </div>
+                                            <div className="col-span-6 sm:col-span-3">
+                                                <label className="block text-sm font-medium text-gray-700">
+                                                    Adverb :
+                                                </label>
+                                                <input
+                                                    type="text" 
+                                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" 
+                                                    name="adverb" value={adverb} onChange={(e) => setAdverb(e.target.value)} required 
+                                                />
+                                            </div>
+                                            <div className="col-span-6 sm:col-span-3">
+                                                <label className="block text-sm font-medium text-gray-700">
+                                                    Part of the Body :
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" 
+                                                    name="bodyPart2" value={bodyPart2} onChange={(e) => setBodyPart2(e.target.value)} required
+                                                />
+                                            </div>
+                                            <div className="col-span-6 sm:col-span-3">
+                                                <label className="block text-sm font-medium text-gray-700">
+                                                    Adjective :
+                                                </label>
+                                                <input
+                                                    type="text" 
+                                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" 
+                                                    name="adjective4" value={adjective4} onChange={(e) => setAdjective4(e.target.value)} required 
+                                                />
+                                            </div>
+                                            <div className="col-span-6 sm:col-span-3">
+                                                <label className="block text-sm font-medium text-gray-700">
+                                                    Noun :
+                                                </label>
+                                                <input
+                                                    type="text" 
+                                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" 
+                                                    name="noun3" value={noun3} onChange={(e) => setNoun3(e.target.value)} required 
+                                                />
+                                            </div>
+                                            <div className="col-span-6 sm:col-span-3">
+                                                <label className="block text-sm font-medium text-gray-700">
+                                                    Plural Noun :
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" 
+                                                    name="pluralNoun3" value={pluralNoun3} onChange={(e) => setPluralNoun3(e.target.value)} required
+                                                />
+                                            </div>
+                                            <div className="col-span-6 sm:col-span-3">
+                                                <label className="block text-sm font-medium text-gray-700">
+                                                    Adjective :
+                                                </label>
+                                                <input
+                                                    type="text" 
+                                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" 
+                                                    name="adjective5" value={adjective5} onChange={(e) => setAdjective5(e.target.value)} required 
+                                                />
+                                            </div>
+                                            <div className="col-span-6 sm:col-span-3">
+                                                <label className="block text-sm font-medium text-gray-700">
+                                                    Random Location :
+                                                </label>
+                                                <input
+                                                    type="text" 
+                                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" 
+                                                    name="location" value={location} onChange={(e) => setLocation(e.target.value)} required 
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
+                                        <button type="submit" className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                                            Update
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div className="form-group">
-                        <label>Noun: </label>
-                        <input type="text" name="noun" value={noun} onChange={(e) => setNoun(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <label>Adjective: </label>
-                        <input type="text" name="adjective" value={adjective} onChange={(e) => setAdjective(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <label>Part of the Body: </label>
-                        <input type="text" name="bodyPart" value={bodyPart} onChange={(e) => setBodyPart(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <label>Adjective: </label>
-                        <input type="text" name="adjective2" value={adjective2} onChange={(e) => setAdjective2(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <label>Adjective: </label>
-                        <input type="text" name="adjective3" value={adjective3} onChange={(e) => setAdjective3(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <label>Noun: </label>
-                        <input type="text" name="noun2" value={noun2} onChange={(e) => setNoun2(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <label>Random Name: </label>
-                        <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <label>Plural Noun: </label>
-                        <input type="text" name="pluralNoun2" value={pluralNoun2} onChange={(e) => setPluralNoun2(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <label>Adverb: </label>
-                        <input type="text" name="adverb" value={adverb} onChange={(e) => setAdverb(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <label>Part of the Body: </label>
-                        <input type="text" name="bodyPart2" value={bodyPart2} onChange={(e) => setBodyPart2(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <label>Adjective: </label>
-                        <input type="text" name="adjective4" value={adjective4} onChange={(e) => setAdjective4(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <label>Noun: </label>
-                        <input type="text" name="noun3" value={noun3} onChange={(e) => setNoun3(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <label>Plural Noun: </label>
-                        <input type="text" name="pluralNoun3" value={pluralNoun3} onChange={(e) => setPluralNoun3(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <label>Adjective: </label>
-                        <input type="text" name="adjective5" value={adjective5} onChange={(e) => setAdjective5(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <label>Location: </label>
-                        <input type="text" name="location" value={location} onChange={(e) => setLocation(e.target.value)} />
-                    </div>
-                    <br />
-                    <input type="submit" value="Update Story" />
-                </form>
+                </div>
             </div>
-        </div>
-    )
-}
+        </>
+    );
+};
 
-export default WonderUpdate
+export default WonderUpdate;

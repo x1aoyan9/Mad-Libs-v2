@@ -107,8 +107,8 @@ const JudgeUpdate = (props) => {
                     <div className="md:grid md:grid-cols-3 md:gap-6">
                         <div className="md:col-span-1">
                             <div className="px-4 sm:px-0">
-                                <h2 className="text-lg font-medium leading-6 text-gray-900">Judges' Decision</h2>
-                                <h3 className="mt-1 text-sm text-gray-600">Please fill in the blanks.</h3>
+                                <h2 className="text-lg font-medium leading-6 text-gray-900">The Judges' Decision</h2>
+                                <h3 className="mt-1 text-sm text-gray-600">Edit your answers.</h3>
                                 <br />
                             </div>
                         </div>

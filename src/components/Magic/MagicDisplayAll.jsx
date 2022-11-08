@@ -57,7 +57,7 @@ const MagicDisplayAll = () => {
                                 <div className="overflow-hidden shadow sm:rounded-md">
                                     <div className="bg-white px-4 py-5 sm:p-6">
                                         <p>
-                                        <strong>{oneMagicLib.pluralNoun}</strong> of all ages enjoy watching <strong>{oneMagicLib.adjective}</strong> magicians perform their <strong>{oneMagicLib.adjective2}</strong> tricks...
+                                        <strong>{magicLib.pluralNoun}</strong> of all ages enjoy watching <strong>{magicLib.adjective}</strong> magicians perform their <strong>{magicLib.adjective2}</strong> tricks...
                                         </p>
                                         <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
                                             <button 
