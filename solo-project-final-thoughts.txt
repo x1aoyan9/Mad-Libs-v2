@@ -1,0 +1,7 @@
+Due to trying to explore styling a responsive page, I was unable to finish the random word generator. I was having some trouble with them and was trying to figure out how to implement that many buttons and ended up going down rabbit hole after rabbit hole with looking up suggested solutions. I'm thinking it may best be done if each button is it's own component (to extend??)
+
+When adding all the styling and animations on top of everything, it was an interesting challenge to try to get everything working. It's not perfect and I'm likely to revisit this project again soon to try to make my (original?) vision to fruition.
+
+Still fun, but I looked at so many different animation and styling tools that my head is still spinning XD
+
+Sarah Hodshire
