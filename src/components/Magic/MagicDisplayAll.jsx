@@ -3,16 +3,16 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const GiraffeDisplayAll = () => {
+const MagicDisplayAll = () => {
 
     const navigate = useNavigate();
-    const [allGiraffeLibs, setAllGiraffeLibs] = useState([]);
+    const [allMagicLibs, setAllMagicLibs] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/giraffe')
+        axios.get('http://localhost:8000/api/magic')
         .then((res) => {
             console.log(res.data);
-            setAllGiraffeLibs(res.data);
+            setAllMagicLibs(res.data);
         })
         .catch((err) => {
             console.log(err);
@@ -20,14 +20,14 @@ const GiraffeDisplayAll = () => {
     }, []);
 
     const deleteFilter = (idFromBelow) => {
-        axios.delete(`http://localhost:8000/api/giraffe/${idFromBelow}`)
+        axios.delete(`http://localhost:8000/api/magic/${idFromBelow}`)
         .then((res) => {
             console.log("Successful delete");
             console.log(res.data);
-            const filteredGiraffeLibs = allGiraffeLibs.filter((giraffeLib) => {
-                return giraffeLib._id !== idFromBelow;
+            const filteredMagicLibs = allMagicLibs.filter((magicLib) => {
+                return magicLib._id !== idFromBelow;
             });
-            setAllGiraffeLibs(filteredGiraffeLibs);
+            setAllMagicLibs(filteredMagicLibs);
         })
         .catch((err) => {
             console.log("An error has occured when attempting to delete the Mad Lib");
@@ -44,12 +44,12 @@ const GiraffeDisplayAll = () => {
                     </div>
                 </div>
                 <div className="mt-10 sm:mt-0">
-                    { allGiraffeLibs.map((giraffeLib, index) => (
+                    { allMagicLibs.map((magicLib, index) => (
                         <div key={index} className="md:grid md:grid-cols-3 md:gap-6">
                             <div className="md:col-span-1">
                                 <div className="px-4 sm:px-0">
-                                    <h2 className="text-lg font-medium leading-6 text-gray-900">Have I Got a Giraffe For You</h2>
-                                    <h3 className="mt-1 text-sm text-gray-600">By: {giraffeLib.yourName}</h3>
+                                    <h2 className="text-lg font-medium leading-6 text-gray-900">Magic, Anyone?</h2>
+                                    <h3 className="mt-1 text-sm text-gray-600">By: {magicLib.yourName}</h3>
                                     <br />
                                 </div>
                             </div>
@@ -57,25 +57,24 @@ const GiraffeDisplayAll = () => {
                                 <div className="overflow-hidden shadow sm:rounded-md">
                                     <div className="bg-white px-4 py-5 sm:p-6">
                                         <p>
-                                            Giraffes have aroused the curiosity of <strong>{giraffeLib.pluralNoun}</strong> since earliest times. The giraffe is the tallest of all living 
-                                            <strong>{giraffeLib.pluralNoun2}</strong>, but scientists are unable to explain how it got its long <strong>{giraffeLib.bodyPart}</strong>...
+                                        <strong>{oneMagicLib.pluralNoun}</strong> of all ages enjoy watching <strong>{oneMagicLib.adjective}</strong> magicians perform their <strong>{oneMagicLib.adjective2}</strong> tricks...
                                         </p>
                                         <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
                                             <button 
                                                 className="rounded-full inline-flex justify-center border border-purple bg-white mr-2 py-2 px-4 text-sm font-medium text-purple-500 shadow-sm hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2" 
-                                                onClick={ () => navigate(`/giraffe/${giraffeLib._id}`) }
+                                                onClick={ () => navigate(`/magic/${magicLib._id}`) }
                                             >
                                                 Expand
                                             </button>
                                             <button 
                                                 className="rounded-full inline-flex justify-center border border-yellow bg-white mr-2 py-2 px-4 text-sm font-medium text-yellow-500 shadow-sm hover:bg-yellow-800 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2" 
-                                                onClick={ () => navigate(`/giraffe/edit/${giraffeLib._id}`) }
+                                                onClick={ () => navigate(`/magic/edit/${magicLib._id}`) }
                                             >
                                                 Edit
                                             </button>
                                             <button 
                                                 className="rounded-full inline-flex justify-center border border-indego bg-white py-2 px-4 text-sm font-medium text-blue-500 shadow-sm hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" 
-                                                onClick={ () => deleteFilter(giraffeLib._id) }
+                                                onClick={ () => deleteFilter(magicLib._id) }
                                             >
                                                 Delete
                                             </button>
@@ -91,4 +90,4 @@ const GiraffeDisplayAll = () => {
     );
 };
 
-export default GiraffeDisplayAll;
+export default MagicDisplayAll;

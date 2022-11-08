@@ -49,13 +49,13 @@ const BandDisplayAll = () => {
                             <div className="md:col-span-1">
                                 <div className="px-4 sm:px-0">
                                     <h2 className="text-lg font-medium leading-6 text-gray-900">Family Rock Band</h2>
+                                    <h3 className="mt-1 text-sm text-gray-600">By: {bandLib.yourName}</h3>
                                     <br />
                                 </div>
                             </div>
                             <div className="mt-5 md:col-span-2 md:mt-0">
                                 <div className="overflow-hidden shadow sm:rounded-md">
                                     <div className="bg-white px-4 py-5 sm:p-6">
-                                        <p>By: {bandLib.yourName}</p>
                                         <p>
                                             I don't come from your average <strong>{bandLib.adjective}</strong> family. That's because we're all  part of 
                                             the <strong>{bandLib.name}</strong> Family rock band and we lead a very <strong>{bandLib.adjective2}</strong> life...
